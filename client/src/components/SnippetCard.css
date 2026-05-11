@@ -1,0 +1,128 @@
+.snippet-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: all var(--transition-base);
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.snippet-card:hover {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.snippet-card-header {
+  padding: 20px 20px 12px;
+}
+
+.snippet-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.snippet-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.snippet-card-title a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.snippet-card-title a:hover {
+  color: var(--accent-primary);
+}
+
+.snippet-card-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.private-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--warning);
+  padding: 2px 8px;
+  background: rgba(245, 158, 11, 0.1);
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.snippet-card-code {
+  position: relative;
+  margin: 0 20px;
+  padding: 14px;
+  background: var(--code-bg);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.snippet-card-code pre {
+  margin: 0;
+  overflow: hidden;
+}
+
+.snippet-card-code code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.78rem;
+  line-height: 1.65;
+  color: var(--code-preview-text);
+}
+
+.code-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  background: linear-gradient(transparent, var(--code-bg));
+  pointer-events: none;
+}
+
+.snippet-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+}
+
+.snippet-card-details {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.detail-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.snippet-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.snippet-delete-btn:hover {
+  color: var(--danger) !important;
+  background: rgba(239, 68, 68, 0.1) !important;
+}

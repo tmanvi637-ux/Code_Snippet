@@ -1,0 +1,72 @@
+.snippet-form-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.back-btn {
+  margin-bottom: 16px;
+}
+
+.snippet-form {
+  padding: 32px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-field-grow {
+  flex: 1;
+}
+
+.form-field-lang {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.code-textarea {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  tab-size: 2;
+  resize: vertical;
+  min-height: 300px;
+  background: var(--code-bg);
+  color: var(--code-text);
+  transition: background 0.3s ease;
+}
+
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-field-lang {
+    width: 100%;
+  }
+
+  .snippet-form {
+    padding: 20px;
+  }
+
+  .form-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-footer .btn {
+    width: 100%;
+  }
+}

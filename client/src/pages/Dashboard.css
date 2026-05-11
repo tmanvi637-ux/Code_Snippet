@@ -1,0 +1,18 @@
+.dashboard-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .dashboard-header {
+    flex-direction: column;
+  }
+
+  .dashboard-header .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,54 @@
+.code-block {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--code-bg);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.code-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: var(--code-header-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.copy-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.code-block-body {
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.code-block-body pre {
+  margin: 0;
+}
+
+.code-block-body code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--code-text);
+  tab-size: 2;
+}

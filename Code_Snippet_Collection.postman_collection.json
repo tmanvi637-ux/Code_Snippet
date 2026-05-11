@@ -1,0 +1,301 @@
+{
+	"info": {
+		"_postman_id": "7f0a8c2f-8700-4b31-9fbd-c6a6f11c7bb5",
+		"name": "Code Snippet Platform",
+		"description": "Collection of all API endpoints for the Code Snippets platform.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"testuser\",\n    \"email\": \"testuser@example.com\",\n    \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"testuser@example.com\",\n    \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Snippets",
+			"item": [
+				{
+					"name": "Get All Public Snippets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/snippets/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Snippets (Auth)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/snippets/mine",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets",
+								"mine"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Snippet by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}",
+								"type": "text",
+								"description": "Optional: Only needed if snippet is private"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/snippets/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Snippet (Auth)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Hello World Script\",\n    \"code\": \"console.log('Hello World!');\",\n    \"language\": \"javascript\",\n    \"isPublic\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/snippets/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Snippet (Auth)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Updated Script Title\",\n    \"code\": \"console.log('Updated Hello World!');\",\n    \"language\": \"javascript\",\n    \"isPublic\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/snippets/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Snippet (Auth)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/snippets/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fork Snippet (Auth)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/snippets/fork/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets",
+								"fork",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:5100",
+			"type": "string"
+		},
+		{
+			"key": "auth_token",
+			"value": "YOUR_JWT_TOKEN_HERE",
+			"type": "string"
+		}
+	]
+}
